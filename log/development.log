@@ -350,3 +350,19 @@ Started GET "/posts/new" for 63.119.220.66 at 2018-03-27 22:55:04 +0000
 Processing by PostsController#new as HTML
   Rendered posts/new.html.erb within layouts/application (1.5ms)
 Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 63.119.220.66 at 2018-03-27 22:55:15 +0000
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qi/+iRFP3MT5WanTCsCjAkzqZpCdLQMSl/erOb3fq5yxOtFvpGQCS2I3aI+6B8KLGhKh8FtzioaX9gFlYN6czw==", "post"=>{"title"=>"Titular Portion", "description"=>"Descriptive Portion"}}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (73.2ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Titular Portion"], ["description", "Descriptive Portion"], ["created_at", "2018-03-27 22:55:15.661916"], ["updated_at", "2018-03-27 22:55:15.661916"]]
+  [1m[36m (5.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.241.157.192:55373/posts
+Completed 302 Found in 92ms (ActiveRecord: 79.6ms)
+
+
+Started GET "/posts" for 63.119.220.66 at 2018-03-27 22:55:15 +0000
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (1.6ms)
